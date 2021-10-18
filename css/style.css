@@ -1,0 +1,30 @@
+body {
+	 background-image: url("../images/bg_main.png");
+	}
+
+h1 {
+	color: darkblue;
+	font-family: Rockwell Extra Bold;
+}
+
+#product{
+	padding:0px;
+	clear:none;
+}
+
+#p_list{
+	width:250px;
+	max-width:250px;
+	height:250px;
+	max-height:250px;
+	padding:5px;
+	border:1px solid #00008B;
+	float:left;
+	margin:15px;
+}
+
+#p_list img{
+	height:150px; 
+	width:150px;
+}
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title>BAUSAS WEBSYS EXAM</title>
+		<script src = "js/angular.js"></script>
+		<script src = "js/app.js"></script>
+		<meta charset = "UTF-7" name = "viewport" content = "width=device-width, initial-scale=1" />
+		<link rel = "stylesheet" type = "text/css" href = "css/bootstrap.css"/>
+		<link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
+	</head>
+
+<body ng-app = "My_Module" ng-controller = "MainController">
+	<div class = "col-md-20"></div>
+	<div class = "col-md-10">
+		<h1 class = "text-center">WIN GADGETS</h1>
+		<hr style = "border-top:30px inherit #00008B;"/>
+		<div id = "bg-primary" class = "col-md-7">
+			<h4 style="font-family: Franklin Gothic Medium;">ALL PRODUCTS</h4>
+			<hr style = "border-top:1px groovy #0000FF;">
+			<div id = "product">
+				<div id = "p_list" ng-repeat = "product in products ">
+					<h5>{{product.p_name}}</h5>
+					<center><img ng-src = "{{product.p_image}}"/></center>
+					<div> <center><label> PHP {{product.p_price}}</label> </center>
+					</div> <center><button type = "button" ng-click = "add_cart(product)"><span class = "glyphicon glyphicon-shopping-cart"></span> Add to cart</button></center>
+				</div>
+			</div>
+		</div>
+			<div class="col-md-5">
+			<div class="alert alert-success">MY CART</div>
+			<table class="table table-bordered ">
+				<thead class="thead-dark">
+					<tr>
+						<th>Product</th>
+						<th>Price</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat = "cart in carts" ng-init="setTotals(cart)">
+						<td>{{cart.p_name}}</td>
+						<td>₱{{cart.p_price}}</td>
+						<td><button type = "button" ng-click = "remove_cart(cart)" class = "btn btn-danger btn-sm"><span class = "glyphicon glyphicon-remove"></span></button></td>
+					</tr>
+					<tr>
+						<td align="right">Total</td>
+						<td>₱{{total}}</td>
+						<td><button class="btn btn-sm btn-success" ng-click="confirm()">Confirm</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+<script src="js/angular.js"></script>
+<script src="js/script.js"></script>	
+</body>	
+</html>
